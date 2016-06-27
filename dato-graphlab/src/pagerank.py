@@ -1,14 +1,21 @@
-import graphlab
+import graphlab as gl
 import config
 
-data = graphlab.SFrame.read_csv(config.getSmallFormatted())
+data = gl.SFrame.read_csv(config.getSmallFormatted(), delimiter=",")
 
-g = graphlab.SGraph()
+g = gl.graphlab.SGraph()
 
 g = g.add_edges(data, src_field='src', dst_field='dst')
 
-pr = graphlab.pagerank.create(g)
 
-pr_out = pr['pagerank']
+pr = gl.graphlab.pagerank.create(g, max_iterations=100)
 
-g.vertices['pagerank'] = pr['graph'].vertices['pagerank']
+scores = pr.get('pagerank').remove_column('delta').sort('pagerank', ascending=False)
+
+scores.save(config.getOutputFolder() + 'out.csv', format='csv')
+
+ranking = list()
+
+for item in scores['__id']:
+    ranking.append(item)
+

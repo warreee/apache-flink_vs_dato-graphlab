@@ -8,6 +8,7 @@ large = config.getLarge()
 def transform_data(path_to_file):
     formattedLines = list()
     with open(path_to_file) as f:
+        formattedLines.append("src,dst")
         content = f.readlines()
         for l in content:
             l = l.rstrip('\n')
@@ -17,8 +18,6 @@ def transform_data(path_to_file):
                 while i < len(line):
                     formattedLines.append((line[0] + "," + line[i]))
                     i += 1
-            else:
-                formattedLines.append(line[0])
 
     f.close()
 

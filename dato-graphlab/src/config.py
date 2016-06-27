@@ -19,3 +19,9 @@ def getLarge():
 
 def getSmallFormatted():
     return getDataPath() + "sample-small.formatted.txt"
+
+
+def getOutputFolder():
+    return os.getcwd().replace("dato-graphlab/src", "results/")
+
+
