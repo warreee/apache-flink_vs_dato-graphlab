@@ -8,5 +8,9 @@ public class Config {
         return getDataPath() + "sample-small.formatted.txt";
     }
 
+    public static String getGoogle() {
+        return getDataPath() + "web-Google.txt";
+    }
+
 
 }

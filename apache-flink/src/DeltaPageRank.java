@@ -18,7 +18,7 @@ public class DeltaPageRank {
         double threshold = 0.0001 / numVertices;
         double dampeningFactor = 0.85;
 
-        String adjacencyPath = Config.getSmallFormatted();
+        String adjacencyPath = Config.getGoogle();
         String outpath = "/home/warreee/projects/flink-training-exercises/out";
 
 
@@ -52,7 +52,12 @@ public class DeltaPageRank {
 
 
 //		System.out.println(env.getExecutionPlan());
+        env.setParallelism(8);
+        long start = System.currentTimeMillis();
         env.execute("Adaptive Page Rank");
+        long stop = System.currentTimeMillis();
+        long elapsed = stop - start;
+        System.out.println(elapsed);
     }
 
 
