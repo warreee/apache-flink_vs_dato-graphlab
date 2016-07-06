@@ -52,7 +52,7 @@ public class DeltaPageRank {
 
 
 //		System.out.println(env.getExecutionPlan());
-        env.setParallelism(8);
+
         long start = System.currentTimeMillis();
         env.execute("Adaptive Page Rank");
         long stop = System.currentTimeMillis();

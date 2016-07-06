@@ -36,7 +36,8 @@ def compare(correctList, newList, scope):
 
 
 newList = list()
-new = gl.SFrame.read_csv(config.getOutputFolder() + "out.csv")['__id']
+new = gl.SFrame.read_csv("/home/warreee/projects/apache-flink_vs_dato-graphlab/results/small/total.txt", delimiter=" ", header=False).sort('X2', ascending=False)[
+        'X1']
 for i in new:
     newList.append(i)
 
@@ -48,11 +49,11 @@ correct = \
 for i in correct:
     correctList.append(i)
 
-newList2 = list()
-new2 = \
-    gl.SFrame.read_csv(config.getOutputFolder() + "out2.csv", delimiter=',', header=False).sort('X2', ascending=False)[
-        'X1']
-for i in new2:
-    newList2.append(i)
+# newList2 = list()
+# new2 = \
+#     gl.SFrame.read_csv(config.getOutputFolder() + "out2.csv", delimiter=',', header=False).sort('X2', ascending=False)[
+#         'X1']
+# for i in new2:
+#     newList2.append(i)
 
-print compare(correctList, newList2, 5)
+print compare(correctList, newList, 5)

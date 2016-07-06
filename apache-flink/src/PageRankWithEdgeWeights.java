@@ -43,9 +43,9 @@ public class PageRankWithEdgeWeights {
     @SuppressWarnings("serial")
     public static void main(String[] args) throws Exception {
 
-        String edgeInputPath = "/software/flink/web-Google.txt";
+        String edgeInputPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/data/sample-small.txt";
         int maxIterations = 100;
-        String outputPath = "/software/flink/out";
+        String outputPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/apache-flink/out";
 
 
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
@@ -101,7 +101,7 @@ public class PageRankWithEdgeWeights {
         pageRanks.writeAsCsv(outputPath, "\n", ",", FileSystem.WriteMode.OVERWRITE);
         // since file sinks are lazy,trigger the execution explicitly
 
-        env.setParallelism(6);
+
         long start = System.currentTimeMillis();
         env.execute("PageRank with Edge Weights");
         long stop = System.currentTimeMillis();

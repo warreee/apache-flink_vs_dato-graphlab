@@ -1,5 +1,5 @@
 import graphlab as gl
-import config
+from . import config
 
 data = gl.SFrame.read_csv(config.getSmallFormatted(), delimiter=",")
 

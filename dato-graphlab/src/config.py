@@ -16,6 +16,9 @@ def getMedium():
 def getLarge():
     return getDataPath() + "sample-large.txt"
 
+def getGoogle():
+    return getDataPath() + "web-Google.txt"
+
 
 def getSmallFormatted():
     return getDataPath() + "sample-small.formatted.txt"

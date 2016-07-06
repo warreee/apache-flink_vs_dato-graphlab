@@ -1,7 +1,7 @@
 public class Config {
 
     public static String getDataPath() {
-        return (System.getProperty("user.dir") + "/").replace("/apache-flink/", "/data/");
+        return "/home/warreee/projects/apache-flink_vs_dato-graphlab/data/";
     }
 
     public static String getSmallFormatted() {
