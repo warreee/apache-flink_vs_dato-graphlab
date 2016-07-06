@@ -20,8 +20,8 @@ def getGoogle():
     return getDataPath() + "web-Google.txt"
 
 
-def getSmallFormatted():
-    return getDataPath() + "sample-small.formatted.txt"
+def getStanford():
+    return getDataPath() + "web-Stanford.txt"
 
 
 def getOutputFolder():
