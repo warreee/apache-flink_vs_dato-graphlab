@@ -1,21 +1,29 @@
 import graphlab as gl
-from . import config
+import config
 
-data = gl.SFrame.read_csv(config.getSmallFormatted(), delimiter=",", header=False)
+small = gl.SFrame.read_csv(config.getDataPath() + "sample-small.formatted.txt", delimiter="\t", header=False)
+medium = gl.SFrame.read_csv(config.getDataPath() + "sample-medium.formatted.txt", delimiter="\t", header=False)
+large = gl.SFrame.read_csv(config.getDataPath() + "sample-large.formatted.txt", delimiter="\t", header=False)
+#stanford = gl.SFrame.read_csv(config.getStanford(), delimiter="\t", header=False)
+#google = gl.SFrame.read_csv(config.getGoogle(), delimiter="\t", header=False)
 
-g = gl.graphlab.SGraph()
+data = {'small': small, 'medium': medium, 'large': large}
 
-g = g.add_edges(data, src_field='X1', dst_field='X2')
+for d in data.keys():
 
+    g = gl.graphlab.SGraph()
 
-pr = gl.graphlab.pagerank.create(g, max_iterations=100)
+    g = g.add_edges(data.get(d), src_field='X1', dst_field='X2')
 
-scores = pr.get('pagerank').remove_column('delta').sort('pagerank', ascending=False)
+    pr = gl.graphlab.pagerank.create(g, max_iterations=100)
 
-scores.save(config.getOutputFolder() + 'out.csv', format='csv')
+    scores = pr.get('pagerank').remove_column('delta').sort('pagerank', ascending=False)
 
-ranking = list()
+    name = config.getOutputFolder() + d + '.csv'
 
-for item in scores['__id']:
-    ranking.append(item)
+    scores.save(name, format='csv')
 
+    with open(name, 'r') as fin:
+        headerData = fin.read().splitlines(True)
+    with open(name, 'w') as fout:
+        fout.writelines(headerData[1:])
