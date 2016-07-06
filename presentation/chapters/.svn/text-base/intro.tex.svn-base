@@ -1,0 +1,18 @@
+\section{Projektziele}
+
+% --------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Projektziele}
+Effiziente Implementierung relationaler Joins im Hadoop-Framework
+\hspace{8pt}
+\begin{itemize}
+  \item 2 Verfahren
+  \begin{itemize}
+    \item Realisierung ohne Veränderung des Hadoop-Frameworks
+    \item Erweiterung des Hadoop-Frameworks um einen
+    Merge-Operator
+  \end{itemize}
+  \item Tests der Verfahren gegeneinander
+\end{itemize}
+\end{frame}
+% --------------------------------------------------------------------------------------------------------------

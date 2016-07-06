@@ -1,0 +1,148 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{nty}
+    \entry{pict}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=93d707cc77f037fd02e1c8cfa75317cf}{Commons}{C\bibinitperiod}{Wikimedia}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=93d707cc77f037fd02e1c8cfa75317cf}{Commons}{C\bibinitperiod}{Wikimedia}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{93d707cc77f037fd02e1c8cfa75317cf}
+      \strng{fullhash}{93d707cc77f037fd02e1c8cfa75317cf}
+      \field{sortinit}{C}
+      \field{labeltitle}{Plaques of Lambda Phages on E. coli XL1-Blue MRF}
+      \field{note}{File: \ttfamily{LambdaPlaques.jpg}}
+      \field{title}{Plaques of Lambda Phages on E. coli XL1-Blue MRF}
+      \field{year}{2007}
+      \verb{url}
+      \verb https://commons.wikimedia.org/wiki/File:LambdaPlaques.jpg
+      \endverb
+    \endentry
+    \entry{pasdfct}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=93d707cc77f037fd02e1c8cfa75317cf}{Commons}{C\bibinitperiod}{Wikimedia}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=93d707cc77f037fd02e1c8cfa75317cf}{Commons}{C\bibinitperiod}{Wikimedia}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{93d707cc77f037fd02e1c8cfa75317cf}
+      \strng{fullhash}{93d707cc77f037fd02e1c8cfa75317cf}
+      \field{sortinit}{C}
+      \field{labeltitle}{Plaques of Lambda Phages on E. coli XL1-Blue MRF}
+      \field{note}{File: \ttfamily{LambdaPlaques.jpg}}
+      \field{title}{Plaques of Lambda Phages on E. coli XL1-Blue MRF}
+      \field{year}{2007}
+      \verb{url}
+      \verb https://commons.wikimedia.org/wiki/File:LambdaPlaques.jpg
+      \endverb
+    \endentry
+    \entry{piasdfct}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=93d707cc77f037fd02e1c8cfa75317cf}{Commons}{C\bibinitperiod}{Wikimedia}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=93d707cc77f037fd02e1c8cfa75317cf}{Commons}{C\bibinitperiod}{Wikimedia}{W\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{93d707cc77f037fd02e1c8cfa75317cf}
+      \strng{fullhash}{93d707cc77f037fd02e1c8cfa75317cf}
+      \field{sortinit}{C}
+      \field{labeltitle}{Plaques of Lambda Phages on E. coli XL1-Blue MRF}
+      \field{note}{File: \ttfamily{LambdaPlaques.jpg}}
+      \field{title}{Plaques of Lambda Phages on E. coli XL1-Blue MRF}
+      \field{year}{2007}
+      \verb{url}
+      \verb https://commons.wikimedia.org/wiki/File:LambdaPlaques.jpg
+      \endverb
+    \endentry
+    \entry{page1999pagerank}{article}{}
+      \name{labelname}{4}{}{%
+        {{hash=5ca20489809aaab392f875d6bc785086}{Page}{P\bibinitperiod}{Lawrence}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=ade8269d287e9c1531e4a1cbad0b4b82}{Brin}{B\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=2f555526320a1c4028ad0f6328953999}{Motwani}{M\bibinitperiod}{Rajeev}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=9270c737346819f33742a35de2661f82}{Winograd}{W\bibinitperiod}{Terry}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=5ca20489809aaab392f875d6bc785086}{Page}{P\bibinitperiod}{Lawrence}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=ade8269d287e9c1531e4a1cbad0b4b82}{Brin}{B\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=2f555526320a1c4028ad0f6328953999}{Motwani}{M\bibinitperiod}{Rajeev}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=9270c737346819f33742a35de2661f82}{Winograd}{W\bibinitperiod}{Terry}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Stanford InfoLab}%
+      }
+      \strng{namehash}{07b677797f2f761de27121ff4ec8b078}
+      \strng{fullhash}{d9b2cbd8494ef6058fe2436ee7edd977}
+      \field{sortinit}{P}
+      \field{labeltitle}{The PageRank citation ranking: bringing order to the web.}
+      \field{title}{The PageRank citation ranking: bringing order to the web.}
+      \field{year}{1999}
+    \endentry
+    \entry{page1999asdpagerank}{article}{}
+      \name{labelname}{4}{}{%
+        {{hash=5ca20489809aaab392f875d6bc785086}{Page}{P\bibinitperiod}{Lawrence}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=ade8269d287e9c1531e4a1cbad0b4b82}{Brin}{B\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=2f555526320a1c4028ad0f6328953999}{Motwani}{M\bibinitperiod}{Rajeev}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=9270c737346819f33742a35de2661f82}{Winograd}{W\bibinitperiod}{Terry}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=5ca20489809aaab392f875d6bc785086}{Page}{P\bibinitperiod}{Lawrence}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=ade8269d287e9c1531e4a1cbad0b4b82}{Brin}{B\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=2f555526320a1c4028ad0f6328953999}{Motwani}{M\bibinitperiod}{Rajeev}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=9270c737346819f33742a35de2661f82}{Winograd}{W\bibinitperiod}{Terry}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Stanford InfoLab}%
+      }
+      \strng{namehash}{07b677797f2f761de27121ff4ec8b078}
+      \strng{fullhash}{d9b2cbd8494ef6058fe2436ee7edd977}
+      \field{sortinit}{P}
+      \field{labeltitle}{The PageRank citation ranking: bringing order to the web.}
+      \field{title}{The PageRank citation ranking: bringing order to the web.}
+      \field{year}{1999}
+    \endentry
+    \entry{page199fdsa9pagerank}{article}{}
+      \name{labelname}{4}{}{%
+        {{hash=5ca20489809aaab392f875d6bc785086}{Page}{P\bibinitperiod}{Lawrence}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=ade8269d287e9c1531e4a1cbad0b4b82}{Brin}{B\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=2f555526320a1c4028ad0f6328953999}{Motwani}{M\bibinitperiod}{Rajeev}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=9270c737346819f33742a35de2661f82}{Winograd}{W\bibinitperiod}{Terry}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{4}{}{%
+        {{hash=5ca20489809aaab392f875d6bc785086}{Page}{P\bibinitperiod}{Lawrence}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=ade8269d287e9c1531e4a1cbad0b4b82}{Brin}{B\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=2f555526320a1c4028ad0f6328953999}{Motwani}{M\bibinitperiod}{Rajeev}{R\bibinitperiod}{}{}{}{}}%
+        {{hash=9270c737346819f33742a35de2661f82}{Winograd}{W\bibinitperiod}{Terry}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Stanford InfoLab}%
+      }
+      \strng{namehash}{07b677797f2f761de27121ff4ec8b078}
+      \strng{fullhash}{d9b2cbd8494ef6058fe2436ee7edd977}
+      \field{sortinit}{P}
+      \field{labeltitle}{The PageRank citation ranking: bringing order to the web.}
+      \field{title}{The PageRank citation ranking: bringing order to the web.}
+      \field{year}{1999}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
