@@ -27,17 +27,19 @@ import org.apache.flink.api.java.operators.IterativeDataSet;
 import org.apache.flink.api.java.tuple.Tuple1;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.api.java.utils.ParameterTool;
+import org.apache.flink.core.fs.FileSystem;
 import org.apache.flink.examples.java.graph.util.PageRankData;
 import org.apache.flink.util.Collector;
 
 import java.util.ArrayList;
 
+import static javafx.scene.input.KeyCode.T;
 import static org.apache.flink.api.java.aggregation.Aggregations.SUM;
 
 public class PageRank {
 
     private static final double DAMPENING_FACTOR = 0.85;
-    private static final double EPSILON = 0.000000001;
+    private static final double EPSILON = 0.0001;
 
     // *************************************************************************
     //     PROGRAM
@@ -47,8 +49,8 @@ public class PageRank {
 
         ParameterTool params = ParameterTool.fromArgs(args);
 
-        final int numPages = 93;
-        final int maxIterations = 100;
+
+        final int maxIterations = 17;
 
         // set up execution environment
         final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
@@ -61,6 +63,10 @@ public class PageRank {
         DataSet<Long> pagesInput = getPagesDataSet(env, path);
         path = Config.getSmallFormatted();
         DataSet<Tuple2<Long, Long>> linksInput = getLinksDataSet(env, path);
+
+
+
+        final int numPages = (int) pagesInput.count();
 
         // assign initial rank to pages
         DataSet<Tuple2<Long, Double>> pagesWithRanks = pagesInput.
@@ -89,7 +95,7 @@ public class PageRank {
 
         // emit result
 
-        finalPageRanks.writeAsCsv("/home/warreee/projects/apache-flink_vs_dato-graphlab/results/small", "\n", " ");
+        finalPageRanks.writeAsCsv("/home/warreee/projects/apache-flink_vs_dato-graphlab/results/small", "\n", " ", FileSystem.WriteMode.OVERWRITE);
         // execute program
         env.execute("Basic Page Rank Example");
 
@@ -211,9 +217,10 @@ public class PageRank {
     private static DataSet<Tuple2<Long, Long>> getLinksDataSet(ExecutionEnvironment env, String path) {
 
         return env.readCsvFile(path)
-                .fieldDelimiter(",")
+                .fieldDelimiter("\t")
                 .lineDelimiter("\n")
                 .types(Long.class, Long.class);
 
     }
+
 }
