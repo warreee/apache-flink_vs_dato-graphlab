@@ -49,17 +49,59 @@ linking to it
 
 % --------------------------------------------------------------------------------------------------------------
 \begin{frame}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.65\textwidth]{squirrel.png}
+	\caption*{\cite{squirrel}}
+\end{figure}
+\end{frame}
+% --------------------------------------------------------------------------------------------------------------
+
+% --------------------------------------------------------------------------------------------------------------
+\begin{frame}
 \frametitle{Apache Flink}
-Effiziente Implementierung relationaler Joins im Hadoop-Framework
-\hspace{8pt}
 \begin{itemize}
-  \item 2 Verfahren
-  \begin{itemize}
-    \item Realisierung ohne Veränderung des Hadoop-Frameworks
-    \item Erweiterung des Hadoop-Frameworks um einen
-    Merge-Operator
-  \end{itemize}
-  \item Tests der Verfahren gegeneinander
+\item Open source framework for distributed Big Data Analytics
+\item Exploits:
+	\begin{itemize}
+	\item data streaming
+	\item in-memory processing
+	\item iteration operators
+	\end{itemize}
+to improve performance
+\item Formerly Stratosphere (Flink means agile)
+\item Developped here at TUB
 \end{itemize}
+\end{frame}
+% --------------------------------------------------------------------------------------------------------------
+
+% --------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{repetition.jpg}
+	\caption*{\cite{repetition}}
+\end{figure}
+\end{frame}
+% --------------------------------------------------------------------------------------------------------------
+
+% --------------------------------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Apache Flink: 2 possible setups}
+
+\begin{minipage}[l]{0.5\textwidth}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{pomxml.png}
+	\caption{Maven}
+\end{figure}
+\end{minipage}
+\begin{minipage}[l]{0.49\textwidth}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{dashboard.png}
+	\caption{Binary version (self compiled)}
+\end{figure}
+\end{minipage}
 \end{frame}
 % --------------------------------------------------------------------------------------------------------------
