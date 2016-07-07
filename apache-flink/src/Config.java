@@ -13,4 +13,7 @@ public class Config {
     }
 
 
+    public static String getOutputPath() {
+        return "/home/warreee/projects/apache-flink_vs_dato-graphlab/results/";
+    }
 }

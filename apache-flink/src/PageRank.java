@@ -22,18 +22,15 @@ import org.apache.flink.api.common.functions.GroupReduceFunction;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;
-import org.apache.flink.api.java.functions.FunctionAnnotation.ForwardedFields;
 import org.apache.flink.api.java.operators.IterativeDataSet;
 import org.apache.flink.api.java.tuple.Tuple1;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.core.fs.FileSystem;
-import org.apache.flink.examples.java.graph.util.PageRankData;
 import org.apache.flink.util.Collector;
 
 import java.util.ArrayList;
 
-import static javafx.scene.input.KeyCode.T;
 import static org.apache.flink.api.java.aggregation.Aggregations.SUM;
 
 public class PageRank {
@@ -44,11 +41,12 @@ public class PageRank {
     // *************************************************************************
     //     PROGRAM
     // *************************************************************************
-
+    @SuppressWarnings("serial")
     public static void main(String[] args) throws Exception {
 
         ParameterTool params = ParameterTool.fromArgs(args);
 
+        final String dataset = "small";
 
         final int maxIterations = 17;
 
@@ -59,14 +57,13 @@ public class PageRank {
         env.getConfig().setGlobalJobParameters(params);
 
         // get input data
-        String path = "/home/warreee/projects/apache-flink_vs_dato-graphlab/data/smallVertices.txt";
+        String path = Config.getDataPath() + dataset + "Vertices.txt";
         DataSet<Long> pagesInput = getPagesDataSet(env, path);
-        path = Config.getSmallFormatted();
+        path = Config.getDataPath() + "sample-" + dataset + ".formatted.txt";
         DataSet<Tuple2<Long, Long>> linksInput = getLinksDataSet(env, path);
 
 
-
-        final int numPages = (int) pagesInput.count();
+        int numPages = 93;
 
         // assign initial rank to pages
         DataSet<Tuple2<Long, Double>> pagesWithRanks = pagesInput.
@@ -95,7 +92,7 @@ public class PageRank {
 
         // emit result
 
-        finalPageRanks.writeAsCsv("/home/warreee/projects/apache-flink_vs_dato-graphlab/results/small", "\n", " ", FileSystem.WriteMode.OVERWRITE);
+        finalPageRanks.writeAsCsv(Config.getOutputPath() + dataset + "3", "\n", " ", FileSystem.WriteMode.OVERWRITE);
         // execute program
         env.execute("Basic Page Rank Example");
 
@@ -111,7 +108,8 @@ public class PageRank {
     /**
      * A map function that assigns an initial rank to all pages.
      */
-    public static final class RankAssigner implements MapFunction<Long, Tuple2<Long, Double>> {
+    @SuppressWarnings("serial")
+    static final class RankAssigner implements MapFunction<Long, Tuple2<Long, Double>> {
         Tuple2<Long, Double> outPageWithRank;
 
         public RankAssigner(double rank) {
@@ -129,8 +127,8 @@ public class PageRank {
      * A reduce function that takes a sequence of edges and builds the adjacency list for the vertex where the edges
      * originate. Run as a pre-processing step.
      */
-    @ForwardedFields("0")
-    public static final class BuildOutgoingEdgeList implements GroupReduceFunction<Tuple2<Long, Long>, Tuple2<Long, Long[]>> {
+    @SuppressWarnings("serial")
+    static final class BuildOutgoingEdgeList implements GroupReduceFunction<Tuple2<Long, Long>, Tuple2<Long, Long[]>> {
 
         private final ArrayList<Long> neighbors = new ArrayList<Long>();
 
@@ -150,7 +148,8 @@ public class PageRank {
     /**
      * Join function that distributes a fraction of a vertex's rank to all neighbors.
      */
-    public static final class JoinVertexWithEdgesMatch implements FlatMapFunction<Tuple2<Tuple2<Long, Double>, Tuple2<Long, Long[]>>, Tuple2<Long, Double>> {
+    @SuppressWarnings("serial")
+    static final class JoinVertexWithEdgesMatch implements FlatMapFunction<Tuple2<Tuple2<Long, Double>, Tuple2<Long, Long[]>>, Tuple2<Long, Double>> {
 
         @Override
         public void flatMap(Tuple2<Tuple2<Long, Double>, Tuple2<Long, Long[]>> value, Collector<Tuple2<Long, Double>> out) {
@@ -167,8 +166,8 @@ public class PageRank {
     /**
      * The function that applies the page rank dampening formula
      */
-    @ForwardedFields("0")
-    public static final class Dampener implements MapFunction<Tuple2<Long, Double>, Tuple2<Long, Double>> {
+    @SuppressWarnings("serial")
+    static final class Dampener implements MapFunction<Tuple2<Long, Double>, Tuple2<Long, Double>> {
 
         private final double dampening;
         private final double randomJump;
@@ -188,7 +187,7 @@ public class PageRank {
     /**
      * Filter that filters vertices where the rank difference is below a threshold.
      */
-    public static final class EpsilonFilter implements FilterFunction<Tuple2<Tuple2<Long, Double>, Tuple2<Long, Double>>> {
+    static final class EpsilonFilter implements FilterFunction<Tuple2<Tuple2<Long, Double>, Tuple2<Long, Double>>> {
 
         @Override
         public boolean filter(Tuple2<Tuple2<Long, Double>, Tuple2<Long, Double>> value) {

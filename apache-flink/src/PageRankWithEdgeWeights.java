@@ -44,8 +44,8 @@ public class PageRankWithEdgeWeights {
     public static void main(String[] args) throws Exception {
 
         String edgeInputPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/data/sample-small.txt";
-        int maxIterations = 100;
-        String outputPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/apache-flink/out";
+        int maxIterations = 17;
+        String outputPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/results/smallEdge";
 
 
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
@@ -131,7 +131,7 @@ public class PageRankWithEdgeWeights {
                     Edge<String, Double> edge = new Edge<>();
                     edge.f0 = startVertex;
                     edge.f1 = vertexes[i];
-                    edge.f2 = 100.0;
+                    edge.f2 = 1.0;
                     collector.collect(edge);
                 }
                 System.out.printf("");
