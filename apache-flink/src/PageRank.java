@@ -46,9 +46,9 @@ public class PageRank {
 
         ParameterTool params = ParameterTool.fromArgs(args);
 
-        final String dataset = "small";
+        final String dataset = "medium";
 
-        final int maxIterations = 17;
+        final int maxIterations = 25;
 
         // set up execution environment
         final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
@@ -63,7 +63,7 @@ public class PageRank {
         DataSet<Tuple2<Long, Long>> linksInput = getLinksDataSet(env, path);
 
 
-        int numPages = 93;
+        int numPages = 316;
 
         // assign initial rank to pages
         DataSet<Tuple2<Long, Double>> pagesWithRanks = pagesInput.
