@@ -46,9 +46,9 @@ public class PageRank {
 
         ParameterTool params = ParameterTool.fromArgs(args);
 
-        final String dataset = "medium";
+        final String dataset = "google";
 
-        final int maxIterations = 25;
+        final int maxIterations = 100;
 
         // set up execution environment
         final ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
@@ -59,11 +59,11 @@ public class PageRank {
         // get input data
         String path = Config.getDataPath() + dataset + "Vertices.txt";
         DataSet<Long> pagesInput = getPagesDataSet(env, path);
-        path = Config.getDataPath() + "sample-" + dataset + ".formatted.txt";
+        path = Config.getDataPath() + "web-Google.txt";
         DataSet<Tuple2<Long, Long>> linksInput = getLinksDataSet(env, path);
 
 
-        int numPages = 316;
+        int numPages = 875713;
 
         // assign initial rank to pages
         DataSet<Tuple2<Long, Double>> pagesWithRanks = pagesInput.

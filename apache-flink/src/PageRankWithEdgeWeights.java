@@ -43,9 +43,9 @@ public class PageRankWithEdgeWeights {
     @SuppressWarnings("serial")
     public static void main(String[] args) throws Exception {
 
-        String edgeInputPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/data/sample-medium.txt";
-        int maxIterations = 25;
-        String outputPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/results/mediumEdge";
+        String edgeInputPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/data/web-Google.txt";
+        int maxIterations = 100;
+        String outputPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/results/googleEdge";
 
 
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
