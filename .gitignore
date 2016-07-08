@@ -273,3 +273,8 @@ TSWLatexianTemp*
 # KBibTeX
 *~[0-9]*
 *~
+
+website/css/
+website/images/
+website/js/
+
