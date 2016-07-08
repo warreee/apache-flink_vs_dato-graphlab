@@ -10,21 +10,79 @@
 % ------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{General experiment setup}
+Experiment 1:
 \begin{enumerate}
-\item Data file with graph and pagerank solution
-\item[]
+\item Data file with graph (and pagerank solution)
+\item[] $\Downarrow$
+\item Use Flink and Graphlab implemention to compute pagerank
+\item[] $\Downarrow$
+\item Compare with solution
+\end{enumerate}
+
+\end{frame}
+% ------------------------------------------------------------------------------
+
+
+% ------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{General experiment setup}
+Experiment 1:
+\begin{enumerate}
+\item Data file with graph (and pagerank solution)
+\item[] $\Downarrow$
+\item Use Flink and Graphlab implemention to compute pagerank
+\item[] $\Downarrow$
+\item Compare with solution
+\end{enumerate}
+
+Experiment 2:
+
+\begin{enumerate}
+\item Data file with huge graph (no solution yet)
+\item[] $\Downarrow$
+\item Use Flink and Graphlab implemention to compute pagerank
+\item[] $\Downarrow$
+\item Compare with each other
 \end{enumerate}
 \end{frame}
 % ------------------------------------------------------------------------------
 
 % ------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Flink experiment setup}
+\frametitle{Experiment 1 data}
+Data from a former Hadoop toolkit (Cloud9, now Bespin):
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Name & \# vertices & \# edges\\
+\hline
+Small & 93 & 195\\
+\hline
+Medium & 316 & 430\\
+\hline
+Large & 1458 & 3545\\
+\hline
+\end{tabular}
+\end{table}
 \end{frame}
 % ------------------------------------------------------------------------------
 
 % ------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{GraphLab experiment setup}
+\frametitle{Experiment 2 data}
+Webgraphs from \url{snap.stanford.edu/data/}
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Name & \# vertices & \# edges\\
+\hline
+web-Stanford & 281903 & 2312497\\
+\hline
+web-Google & 875713 & 5105039\\
+\hline
+\end{tabular}
+\end{table}
 \end{frame}
 % ------------------------------------------------------------------------------
