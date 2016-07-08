@@ -12,14 +12,14 @@ public class DeltaPageRank {
 
     public static void main(String[] args) throws Exception {
 
-        int numIterations = 1000;
-        long numVertices = 1458;
+        int numIterations = 100;
+        long numVertices = 875713;
 
         double threshold = 0.0001 / numVertices;
         double dampeningFactor = 0.85;
 
-        String adjacencyPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/data/sample-large.formatted.txt";
-        String outpath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/results/largeDelta";
+        String adjacencyPath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/data/web-Google.txt";
+        String outpath = "/home/warreee/projects/apache-flink_vs_dato-graphlab/results/googleDelta";
 
 
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
@@ -52,7 +52,7 @@ public class DeltaPageRank {
 
 
 //		System.out.println(env.getExecutionPlan());
-        env.setParallelism(1);
+
         long start = System.currentTimeMillis();
         env.execute("Adaptive Page Rank");
         long stop = System.currentTimeMillis();
