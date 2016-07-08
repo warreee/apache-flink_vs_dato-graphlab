@@ -40,7 +40,7 @@ def compare(correctList, newList, scope):
 
 
 dataSets = ['small', 'medium', 'large']
-algo = ['3', 'Edge']
+algo = ['3', 'Delta', 'Edge']
 
 
 
@@ -55,7 +55,7 @@ for d in dataSets:
             data = gl.SFrame.read_csv(config.getOutputFolder() + d + a, delimiter=",", header=False).filter_by([1.0], 'X2', exclude=True).sort('X2', ascending=False)
 
 
-        new = data.head(25)['X1']
+        new = data.head(len(data)/5)['X1']
 
         for i in new:
                 newList.append(i)
@@ -72,6 +72,10 @@ for d in dataSets:
 
         with open(config.getOutputFolder() + d + a + "Comparison.txt", 'w') as f:
             print(d + a)
+            f.write(str(1) + ',' + str(compare(correctList, newList, 1)) + '\n')
+            f.write(str(2) + ',' + str(compare(correctList, newList, 2)) + '\n')
+            f.write(str(3) + ',' + str(compare(correctList, newList, 3)) + '\n')
+            f.write(str(4) + ',' + str(compare(correctList, newList, 4)) + '\n')
             f.write(str(5) + ',' + str(compare(correctList, newList, 5)) + '\n')
             f.write(str(6) + ',' + str(compare(correctList, newList, 6)) + '\n')
             f.write(str(7) + ',' + str(compare(correctList, newList, 7)) + '\n')

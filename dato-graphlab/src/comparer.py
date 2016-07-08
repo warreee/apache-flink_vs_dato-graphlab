@@ -65,10 +65,14 @@ for d in dataSets:
 
 
     with open(config.getOutputFolder() + d + "Comparison.txt", 'w') as f:
-        f.write(str(0) + ',' + str(compare(correctList, newList, 0)) + '\n')
         f.write(str(1) + ',' + str(compare(correctList, newList, 1)) + '\n')
         f.write(str(2) + ',' + str(compare(correctList, newList, 2)) + '\n')
         f.write(str(3) + ',' + str(compare(correctList, newList, 3)) + '\n')
         f.write(str(4) + ',' + str(compare(correctList, newList, 4)) + '\n')
         f.write(str(5) + ',' + str(compare(correctList, newList, 5)) + '\n')
+        f.write(str(6) + ',' + str(compare(correctList, newList, 6)) + '\n')
+        f.write(str(7) + ',' + str(compare(correctList, newList, 7)) + '\n')
+        f.write(str(8) + ',' + str(compare(correctList, newList, 8)) + '\n')
+        f.write(str(9) + ',' + str(compare(correctList, newList, 9)) + '\n')
+        f.write(str(10) + ',' + str(compare(correctList, newList, 10)) + '\n')
         f.close()
